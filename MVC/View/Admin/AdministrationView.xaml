@@ -1,0 +1,91 @@
+﻿<Page x:Class="HotelApp.MVVM.View.AdministrationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HotelApp.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="638" d:DesignWidth="1000">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Управление персоналом" FontSize="32" LineHeight="20" Foreground="#E1DED6" />
+            <TextBlock Grid.Column="1" Text="Управление ресурсами" FontSize="32" LineHeight="20" Foreground="#E1DED6" />
+        </Grid>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Left" Orientation="Horizontal">
+            <!-- Content elements go here -->
+            <!-- Example of a statistics block -->
+            <StackPanel>
+
+                <Button Style="{StaticResource adminBtn}" Background="Transparent" HorizontalAlignment="Left" Margin="0, 10, 0, 0" Padding="0" Click="openEmployee">
+                    <Border CornerRadius="10" Background="#1A5E20" Padding="10" Margin="0, 0, 10, 10" Width="210" Height="210">
+                        <StackPanel >
+                            <Image Source="/Assets/AdminPanel/personal.png" Width="95" HorizontalAlignment="Left" />
+                            <TextBlock Text="Сотрудники" FontSize="24" Foreground="#E1DED6" VerticalAlignment="Bottom"/>
+                        </StackPanel>
+                    </Border>
+                </Button>
+
+                <Button Style="{StaticResource adminBtn}" Background="Transparent" HorizontalAlignment="Left" Margin="0, 10, 0, 0" Padding="0" Click="openPosition">
+                    <Border  CornerRadius="10"  Background="#7A7A7A"  Width="210" Height="210" Padding="10" RenderTransformOrigin="0.5,0.5">
+                       
+                        <StackPanel>
+                            <Image Source="/Assets/AdminPanel/positions.png" Width="95" HorizontalAlignment="Left" />
+                            <TextBlock Text="Должности" FontSize="24" Foreground="#E1DED6" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                    </Border>
+                </Button>
+            </StackPanel>
+            <StackPanel>
+                <Button Style="{StaticResource adminBtn}" Background="Transparent" HorizontalAlignment="Left" Margin="0, 10, 0, 0" Padding="0" Click="openSchedule">
+                    <Border CornerRadius="10" Background="#003366" Padding="10" Margin="10, 0, 10, 10" Width="210" Height="210">
+                        <StackPanel>
+                            <Image Source="/Assets/AdminPanel/schedule.png" Width="95" HorizontalAlignment="Left" />
+                            <TextBlock Text="Графики работы" FontSize="24" Foreground="#E1DED6" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                    </Border>
+                </Button>
+            </StackPanel>
+            <StackPanel Margin="36, 0, 0, 0" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{StaticResource adminBtn}" Background="Transparent" HorizontalAlignment="Left" Margin="0, 10, 0, 0" Padding="0" Click="openRooms">
+                        <Border CornerRadius="10" Background="#A07864" Padding="10" Margin="0, 0, 10, 10" Width="210" Height="210">
+                            <StackPanel >
+                                <Image Source="/Assets/AdminPanel/rooms.png" Width="95" HorizontalAlignment="Left" />
+                                <TextBlock Text="Комнаты" TextWrapping="Wrap" FontSize="24" Foreground="#E1DED6" VerticalAlignment="Bottom"  HorizontalAlignment="Left"/>
+                            </StackPanel>
+                        </Border>
+                    </Button>
+                    <Button Style="{StaticResource adminBtn}" Background="Transparent" HorizontalAlignment="Left" Margin="0, 10, 0, 0" Padding="0" Click="openTypesRoom">
+                        <Border CornerRadius="10" Background="#A15E33" Padding="10" Margin="10, 0, 10, 10" Width="210" Height="210">
+                            <StackPanel>
+                                <Image Source="/Assets/AdminPanel/type.png" Width="95" HorizontalAlignment="Left" />
+                                <TextBlock Text="Типы комнат" FontSize="24" Foreground="#E1DED6" HorizontalAlignment="Left"/>
+                            </StackPanel>
+                        </Border>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{StaticResource adminBtn}" Background="Transparent" HorizontalAlignment="Left" Margin="0, 10, 0, 0" Padding="0" Click="openService">
+                        <Border CornerRadius="10" Background="#CC6633" Padding="10" Margin="0, 10, 10, 0" Width="210" Height="210">
+                            <StackPanel>
+                                <Image Source="/Assets/AdminPanel/services.png" Width="95" HorizontalAlignment="Left" />
+                                <TextBlock Text="Услуги" TextWrapping="Wrap" FontSize="24" Foreground="#E1DED6" HorizontalAlignment="Left"/>
+                            </StackPanel>
+                        </Border>
+                    </Button>
+                </StackPanel>
+
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Page>
