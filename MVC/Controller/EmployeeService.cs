@@ -12,7 +12,7 @@ using Newtonsoft;
 
 namespace HotelApp.MVVM.Controller
 {
-    internal class EmployeeService : IEmployessInterface
+    internal class EmployeeService : IEmployeeInterface
     {
         const string baseUrl = "https://hackaton-yakse.ru/";
         public async Task<List<Employee>> getAll()
@@ -81,6 +81,42 @@ namespace HotelApp.MVVM.Controller
             }
         }
 
+        public async Task<Employee> create(Employee employee)
+        {
+            var client = new RestClient(baseUrl);
+            var request = new RestRequest("employees", Method.Post);
+            request.AddHeader("Content-Type", "application/json");
+            var requestData = employee;
+            string jsonBody = JsonConvert.SerializeObject(requestData);
+            request.AddParameter("application/json", jsonBody, ParameterType.RequestBody);
+            var response = client.Execute(request);
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                string rawResponse = response.Content;
+
+                var result = JsonConvert.DeserializeObject<EmployeeResponse>(rawResponse);
+
+
+                if (result != null)
+                {
+                    Employee rooms = result.data;
+                    return rooms;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                return null;
+            }
+
+
+
+        }
+
+      
         public async Task<Employee> update(MergeAccount person)
         {
             var client = new RestClient(baseUrl);
@@ -115,6 +151,20 @@ namespace HotelApp.MVVM.Controller
 
 
         }
-        
+
+        public async Task<int> delete(int id)
+        {
+            var client = new RestClient(baseUrl);
+            var request = new RestRequest($"employees/{id}", Method.Delete);
+            var response = client.Execute(request);
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                return id;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }

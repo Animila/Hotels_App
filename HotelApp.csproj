@@ -162,11 +162,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVC\View\Admin\Modals\Positions\AddPosition.xaml">
+    <Page Include="MVC\View\Admin\ExtraPage\SheduleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVC\View\Admin\PersonalPage.xaml">
+    <Page Include="MVC\View\Admin\ExtraPage\TypeRoomView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVC\View\Admin\Modals\AddPersonal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVC\View\Admin\Modals\AddPosition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVC\View\Admin\Modals\AddRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVC\View\Admin\Modals\AddTypeRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVC\View\Admin\PersonalView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -177,25 +197,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MVC\Controller\EmployeeService.cs" />
-    <Compile Include="MVC\Controller\GuestsServices.cs" />
-    <Compile Include="MVC\Controller\PositionsService.cs" />
-    <Compile Include="MVC\Controller\RoomsService.cs" />
-    <Compile Include="MVC\Controller\UsersService.cs" />
-    <Compile Include="MVC\Interface\IEmployessInterface.cs" />
-    <Compile Include="MVC\Interface\IGuestsInterface.cs" />
-    <Compile Include="MVC\Interface\IPositionsInterface.cs" />
-    <Compile Include="MVC\Interface\IRoomsEnterface.cs" />
-    <Compile Include="MVC\Interface\IUsersInterface.cs" />
+    <Compile Include="MVC\Controller\GuestServices.cs" />
+    <Compile Include="MVC\Controller\PositionService.cs" />
+    <Compile Include="MVC\Controller\RoomService.cs" />
+    <Compile Include="MVC\Controller\TypeRoomService.cs" />
+    <Compile Include="MVC\Controller\UserService.cs" />
+    <Compile Include="MVC\Interface\IEmployeeInterface.cs" />
+    <Compile Include="MVC\Interface\IGuestInterface.cs" />
+    <Compile Include="MVC\Interface\IPositionInterface.cs" />
+    <Compile Include="MVC\Interface\IRoomInterface.cs" />
+    <Compile Include="MVC\Interface\IUserInterface.cs" />
+    <Compile Include="MVC\Interface\ITypeRoomInterface.cs" />
     <Compile Include="MVC\Model\Distribution.cs" />
     <Compile Include="MVC\Model\Employee.cs" />
     <Compile Include="MVC\Model\Guest.cs" />
     <Compile Include="MVC\Model\Position.cs" />
     <Compile Include="MVC\Model\Provision.cs" />
     <Compile Include="MVC\Model\Room.cs" />
-    <Compile Include="MVC\Model\Schedules.cs" />
+    <Compile Include="MVC\Model\Schedule.cs" />
     <Compile Include="MVC\Model\Service.cs" />
     <Compile Include="MVC\Model\TypeRoom.cs" />
-    <Compile Include="MVC\Model\Users.cs" />
+    <Compile Include="MVC\Model\User.cs" />
     <Compile Include="MVC\Storage\UserProfile.cs" />
     <Compile Include="MVC\View\Admin\AdministrationView.xaml.cs">
       <DependentUpon>AdministrationView.xaml</DependentUpon>
@@ -209,11 +231,26 @@
     <Compile Include="MVC\View\Admin\ExtraPage\RoomsView.xaml.cs">
       <DependentUpon>RoomsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVC\View\Admin\Modals\Positions\AddPosition.xaml.cs">
+    <Compile Include="MVC\View\Admin\ExtraPage\SheduleView.xaml.cs">
+      <DependentUpon>SheduleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVC\View\Admin\ExtraPage\TypeRoomView.xaml.cs">
+      <DependentUpon>TypeRoomView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVC\View\Admin\Modals\AddPersonal.xaml.cs">
+      <DependentUpon>AddPersonal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVC\View\Admin\Modals\AddPosition.xaml.cs">
       <DependentUpon>AddPosition.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVC\View\Admin\PersonalPage.xaml.cs">
-      <DependentUpon>PersonalPage.xaml</DependentUpon>
+    <Compile Include="MVC\View\Admin\Modals\AddRoom.xaml.cs">
+      <DependentUpon>AddRoom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVC\View\Admin\Modals\AddTypeRoom.xaml.cs">
+      <DependentUpon>AddTypeRoom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVC\View\Admin\PersonalView.xaml.cs">
+      <DependentUpon>PersonalView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVC\View\Admin\StatisticView.xaml.cs">
       <DependentUpon>StatisticView.xaml</DependentUpon>

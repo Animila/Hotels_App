@@ -25,10 +25,10 @@ namespace HotelApp.MVVM.Storage
             }
         }
 
-        private Users _currentUser;
+        private User _currentUser;
 
         // Добавьте свойства пользователя
-        public Users CurrentUser
+        public User CurrentUser
         {
             get { return _currentUser; }
             set

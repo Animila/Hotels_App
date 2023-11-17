@@ -23,7 +23,7 @@ namespace HotelApp
     /// </summary>
     public partial class AuthWindows : Window
     {
-        IUsersInterface _usersInterface = new UsersService();
+        IUserInterface _usersInterface = new UserService();
         public AuthWindows()
         {
             InitializeComponent();
@@ -31,16 +31,22 @@ namespace HotelApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            AuthBtn.IsEnabled = false;
+
             string user_login = login.Text;
             string user_password = password.Text;
 
             if (user_login == "" || user_password == "" || user_login == null || user_password == null)
-            { MessageBox.Show("Введите логин и пароль"); return; }
+            { 
+                MessageBox.Show("Введите логин и пароль");
+                AuthBtn.IsEnabled = true;
+                return; 
+            }
 
-            Users user = _usersInterface.login(user_login, user_password).Result;
+            User user = _usersInterface.login(user_login, user_password).Result;
 
 
-            if(user == null) { MessageBox.Show("Неправильный логин или пароль"); return; }
+            if(user == null) { MessageBox.Show("Неправильный логин или пароль"); AuthBtn.IsEnabled = true; return; }
             UserProfile.Instance.CurrentUser = user;
             if (user.type == "Администратор")
             {
@@ -49,11 +55,11 @@ namespace HotelApp
             }
             if(user.type == "Гость")
             {
-                MessageBox.Show("Гость " + user.account.first_name + " " + user.account.last_name); return;
+                MessageBox.Show("Гость " + user.account.first_name + " " + user.account.last_name); AuthBtn.IsEnabled = true; return;
             }
             if (user.type == "Персонал")
             {
-                MessageBox.Show("Персонал " + user.account.first_name + " " + user.account.last_name); return;
+                MessageBox.Show("Персонал " + user.account.first_name + " " + user.account.last_name); AuthBtn.IsEnabled = true; return;
             }
             this.Close();
         }

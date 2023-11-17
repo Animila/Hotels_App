@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\khris\Desktop\HotelApp\App.xaml
-9-779435764
+141717622052
 
-36442202971
+431686584382
 37-302883272
-AuthWindows.xaml;MainWindow.xaml;MVC\View\Admin\AdministrationView.xaml;MVC\View\Admin\ExtraPage\PersonalsView.xaml;MVC\View\Admin\ExtraPage\PositionsView.xaml;MVC\View\Admin\ExtraPage\RoomsView.xaml;MVC\View\Admin\Modals\Positions\AddPosition.xaml;MVC\View\Admin\PersonalPage.xaml;MVC\View\Admin\StatisticView.xaml;
+AuthWindows.xaml;MainWindow.xaml;MVC\View\Admin\AdministrationView.xaml;MVC\View\Admin\ExtraPage\PersonalsView.xaml;MVC\View\Admin\ExtraPage\PositionsView.xaml;MVC\View\Admin\ExtraPage\RoomsView.xaml;MVC\View\Admin\ExtraPage\SheduleView.xaml;MVC\View\Admin\ExtraPage\TypeRoomView.xaml;MVC\View\Admin\Modals\AddPersonal.xaml;MVC\View\Admin\Modals\AddPosition.xaml;MVC\View\Admin\Modals\AddRoom.xaml;MVC\View\Admin\Modals\AddTypeRoom.xaml;MVC\View\Admin\PersonalView.xaml;MVC\View\Admin\StatisticView.xaml;
 
 False
 

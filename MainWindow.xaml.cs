@@ -97,7 +97,7 @@ namespace HotelApp
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            MainContentFrame.Navigate(new PersonalPage());
+            MainContentFrame.Navigate(new PersonalView());
         }
 
         private void exitBtn(object sender, RoutedEventArgs e)

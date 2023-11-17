@@ -6,8 +6,7 @@
       xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
       xmlns:local="clr-namespace:HotelApp.MVVM.View.Admin.ExtraPage"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="RoomsView">
+      d:DesignHeight="638" d:DesignWidth="1000">
 
     <Grid >
         <Grid.RowDefinitions>
@@ -15,11 +14,16 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="Комнаты" FontSize="32" LineHeight="20" Foreground="#E1DED6"/>
-        <Button Background="Transparent" Width="135" Height="40" Grid.Row="0" BorderThickness="0" HorizontalAlignment="Right" FontSize="32" VerticalAlignment="Center" Foreground="#E1DED6">
-            <Border CornerRadius="12" Width="135" Height="40" Background="#E1DED6"  VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBlock Text="+ Добавить" FontSize="18" Foreground="#1D2028" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </Border>
-        </Button>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <ComboBox x:Name="typeList" Width="200" Height="30" ItemsSource="{Binding PositionData}" SelectionChanged="typeList_SelectionChanged"
+          DisplayMemberPath="title" SelectedValuePath="id" Margin="0, 0, 10, 0"></ComboBox>
+            
+            <Button Click="Button_Click" Background="Transparent" Width="135" Height="40" Grid.Row="0" BorderThickness="0" HorizontalAlignment="Right" FontSize="32" VerticalAlignment="Center" Foreground="#E1DED6">
+                <Border CornerRadius="12" Width="135" Height="40" Background="#E1DED6"  VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="+ Добавить" FontSize="18" Foreground="#1D2028" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+            </Button>
+        </StackPanel>
 
         <DataGrid Style="{DynamicResource DataGridStyle2}"  x:Name="roomsData"  CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="1"  >
             <DataGrid.Columns>
@@ -33,16 +37,38 @@
                 <DataGridTextColumn Binding="{Binding id}" Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" />
                 <DataGridTextColumn Binding="{Binding price}" Header="Стоимость" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Binding="{Binding count_person}" Header="Кол-во мест" IsReadOnly="True" CanUserResize="False" Width="*" />
-                <DataGridTextColumn Binding="{Binding id_type}" Header="Тип" IsReadOnly="True" CanUserResize="False" Width="*" />
-                <DataGridTextColumn Binding="{Binding id_employess}" Header="Ответственный" IsReadOnly="True" CanUserResize="False" Width="*" />
+                <DataGridTemplateColumn Header="Тип" IsReadOnly="True" CanUserResize="False" Width="*" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding type.title}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Ответственный" IsReadOnly="True" CanUserResize="False" Width="*" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock VerticalAlignment="Center">
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0} {1} {2}">
+                                            <Binding Path="employee.first_name" />
+                                            <Binding Path="employee.last_name" />
+                                            <Binding Path="employee.third_name" />
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Действия" IsReadOnly="True" Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Style="{StaticResource gridEditButton}">
+                                <Button Style="{StaticResource gridEditButton}" Click="EditRoom">
                                     <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridBtnIcon}"/>
                                 </Button>
-                                <Button Style="{StaticResource gridDeleteButton}">
+                                <Button Style="{StaticResource gridDeleteButton}" Click="DelRoom">
                                     <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridBtnIcon}"/>
                                 </Button>
                             </StackPanel>

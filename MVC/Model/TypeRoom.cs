@@ -11,4 +11,18 @@ namespace HotelApp.MVVM.Model
         public int id { get; set; }
         public string title { get; set; }
     }
+
+    public class TypesRoomResponse
+    {
+        public bool success { get; set; }
+        public List<TypeRoom> data { get; set; }
+        public string message { get; set; }
+    }
+
+    public class TypeRoomResponse
+    {
+        public bool success { get; set; }
+        public TypeRoom data { get; set; }
+        public string message { get; set; }
+    }
 }

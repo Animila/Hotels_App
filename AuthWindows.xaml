@@ -34,7 +34,7 @@
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Авторизация" Foreground="#E1DED6" FontSize="32" LineHeight="12" />
             <StackPanel Grid.Row="3" HorizontalAlignment="Center" Width="300" Height="50">
-                <Button Click="Button_Click"  Background="Transparent" Width="300" Height="50" BorderThickness="0"  FontSize="32" VerticalAlignment="Center" Foreground="#E1DED6">
+                <Button x:Name="AuthBtn" Click="Button_Click"  Background="Transparent" Width="300" Height="50" BorderThickness="0"  FontSize="32" VerticalAlignment="Center" Foreground="#E1DED6">
                     <Border CornerRadius="12" Width="300" Height="80" Background="#E1DED6"  VerticalAlignment="Center" HorizontalAlignment="Center">
                         <TextBlock FontSize="28" Text="Войти" Foreground="#1D2028" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>

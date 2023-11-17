@@ -6,7 +6,12 @@ FE:\khris\Desktop\HotelApp\MVC\View\Admin\AdministrationView.xaml;;
 FE:\khris\Desktop\HotelApp\MVC\View\Admin\ExtraPage\PersonalsView.xaml;;
 FE:\khris\Desktop\HotelApp\MVC\View\Admin\ExtraPage\PositionsView.xaml;;
 FE:\khris\Desktop\HotelApp\MVC\View\Admin\ExtraPage\RoomsView.xaml;;
-FE:\khris\Desktop\HotelApp\MVC\View\Admin\PersonalPage.xaml;;
+FE:\khris\Desktop\HotelApp\MVC\View\Admin\ExtraPage\SheduleView.xaml;;
+FE:\khris\Desktop\HotelApp\MVC\View\Admin\ExtraPage\TypeRoomView.xaml;;
+FE:\khris\Desktop\HotelApp\MVC\View\Admin\Modals\AddPersonal.xaml;;
+FE:\khris\Desktop\HotelApp\MVC\View\Admin\Modals\AddPosition.xaml;;
+FE:\khris\Desktop\HotelApp\MVC\View\Admin\Modals\AddRoom.xaml;;
+FE:\khris\Desktop\HotelApp\MVC\View\Admin\Modals\AddTypeRoom.xaml;;
+FE:\khris\Desktop\HotelApp\MVC\View\Admin\PersonalView.xaml;;
 FE:\khris\Desktop\HotelApp\MVC\View\Admin\StatisticView.xaml;;
-FE:\khris\Desktop\HotelApp\MVC\View\Admin\Modals\Positions\AddPosition.xaml;;
 

@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using HotelApp.MVC.View.Admin.Modals.Positions;
+using HotelApp.MVC.View.Admin.Modals;
 using HotelApp.MVVM.Controller;
 using HotelApp.MVVM.Interface;
 using HotelApp.MVVM.Model;
@@ -26,12 +26,12 @@ namespace HotelApp.MVVM.View.Admin.ExtraPage
     /// </summary>
     public partial class PositionsView : Page
     {
-        IPositionsInterface _positionInterface = new PositionsService();
+        IPositionInterface _positionInterface = new PositionService();
         private ObservableCollection<Position> positionObserver;
+
         public PositionsView()
         {
             InitializeComponent();
-            var data = _positionInterface.getAll().Result;
             positionObserver = new ObservableCollection<Position>();
             positionsData.ItemsSource = positionObserver;
             LoadData();
@@ -45,7 +45,7 @@ namespace HotelApp.MVVM.View.Admin.ExtraPage
             positionObserver.Clear();
 
             // Добавьте новые данные в коллекцию
-            foreach (var item in data)
+            foreach (var item in data.OrderBy(item => item.id))
             {
                 positionObserver.Add(item);
             }

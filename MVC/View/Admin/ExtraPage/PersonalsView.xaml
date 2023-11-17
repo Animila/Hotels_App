@@ -16,15 +16,19 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="Персонал" FontSize="32" LineHeight="20" Foreground="#E1DED6"/>
-            <Border Grid.Row="0" BorderBrush="#E1DED6" BorderThickness="2" CornerRadius="10" Width="300" Height="40">
-                <TextBox x:Name="seacrh" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Width="300" Height="40" BorderThickness="0" Foreground="#E1DED6"
-                         Background="Transparent" Padding="8" TextChanged="seacrh_TextChanged"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <ComboBox Style="{StaticResource ComboBoxStyle}" x:Name="positionList" Width="200" Height="30" ItemsSource="{Binding PositionData}" SelectionChanged="positionList_SelectionChanged"
+          DisplayMemberPath="title" SelectedValuePath="id" Margin="0, 0, 10, 0"></ComboBox>
+            <Border Grid.Row="0" BorderBrush="#E1DED6" BorderThickness="2" Margin="0, 0, 10, 0" CornerRadius="10" Width="200" Height="30">
+                <TextBox x:Name="seacrh" HorizontalAlignment="Center"  VerticalAlignment="Center" TextWrapping="Wrap" Width="200" Height="40" BorderThickness="0" Foreground="#E1DED6"
+                        Background="Transparent" Padding="8" TextChanged="seacrh_TextChanged"/>
             </Border>
-        <Button Background="Transparent" Width="135" Height="40" Grid.Row="0" BorderThickness="0" HorizontalAlignment="Right" FontSize="32" VerticalAlignment="Center" Foreground="#E1DED6">
-            <Border CornerRadius="12" Width="135" Height="40" Background="#E1DED6"  VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBlock Text="+ Добавить" FontSize="18" Foreground="#1D2028" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </Border>
-        </Button>
+            <Button Click="AddEmployee" Background="Transparent" Width="135" Height="40" Grid.Row="0" BorderThickness="0" HorizontalAlignment="Right" FontSize="32" VerticalAlignment="Center" Foreground="#E1DED6">
+                <Border CornerRadius="12" Width="135" Height="40" Background="#E1DED6"  VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="+ Добавить" FontSize="18" Foreground="#1D2028" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+            </Button>
+        </StackPanel>
 
         <DataGrid Style="{DynamicResource DataGridStyle2}"  x:Name="personalData"  CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="1"  >
             <DataGrid.Columns>
@@ -66,10 +70,10 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Style="{StaticResource gridEditButton}">
+                                <Button Style="{StaticResource gridEditButton}" Click="EditEmployee">
                                     <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridBtnIcon}"/>
                                 </Button>
-                                <Button Style="{StaticResource gridDeleteButton}" >
+                                <Button Style="{StaticResource gridDeleteButton}" Click="DelEmployee" >
                                     <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridBtnIcon}"/>
                                 </Button>
                             </StackPanel>

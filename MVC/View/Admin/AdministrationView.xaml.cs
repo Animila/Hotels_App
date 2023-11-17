@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HotelApp.MVC.View.Admin.ExtraPage;
+using HotelApp.MVC.View.Admin.Modals;
 using HotelApp.MVVM.View.Admin;
 using HotelApp.MVVM.View.Admin.ExtraPage;
 
@@ -48,7 +50,7 @@ namespace HotelApp.MVVM.View
         {
             if (Application.Current.MainWindow is MainWindow mainWindow)
             {
-                mainWindow.MainContentFrame.Navigate(new PersonalsView());
+                mainWindow.MainContentFrame.Navigate(new SheduleView());
             }
         }
         private void openRooms(object sender, RoutedEventArgs e)
@@ -62,7 +64,7 @@ namespace HotelApp.MVVM.View
         {
             if (Application.Current.MainWindow is MainWindow mainWindow)
             {
-                mainWindow.MainContentFrame.Navigate(new PersonalsView());
+                mainWindow.MainContentFrame.Navigate(new TypeRoomView());
             }
         }
         private void openService(object sender, RoutedEventArgs e)

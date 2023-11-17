@@ -11,6 +11,8 @@ namespace HotelApp.MVVM.Model
         public int id { get; set; }
         public int count_person { get; set; }
         public int id_type { get; set; }
+        public TypeRoom type { get; set; }
+        public Employee employee { get; set; }
         public int price { get; set; }
         public int id_employess { get; set; }
     }
@@ -25,7 +27,13 @@ namespace HotelApp.MVVM.Model
         public bool success { get; set; }
         public List<Room> data { get; set; }
         public string message { get; set; }
+    }
 
+    class RoomResponse
+    {
+        public bool success { get; set; }
+        public Room data { get; set; }
+        public string message { get; set; }
     }
 
     class StatisticRoomsResponse
